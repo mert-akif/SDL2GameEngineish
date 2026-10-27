@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7b81b7a3-1265-4a4e-976d-d08f0db74f44}</ProjectGuid>
+    <RootNamespace>GameEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;EDITOR_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application\main.cpp" />
+    <None Include="Assets\Scenes\Main.scene" />
+    <None Include="Build\build-release.bat">
+      <FileType>Document</FileType>
+    </None>
+    <ClCompile Include="Engine\Assets\AnimationManager.cpp" />
+    <ClCompile Include="Engine\Assets\SceneManager.cpp" />
+    <ClCompile Include="Engine\Assets\ScriptManager.cpp" />
+    <ClCompile Include="Engine\Core\ScriptContext.h" />
+    <ClCompile Include="Engine\Assets\AssetManager.cpp" />
+    <ClCompile Include="Engine\Assets\FontManager.cpp" />
+    <ClCompile Include="Engine\Assets\SoundManager.cpp" />
+    <ClCompile Include="Engine\Core\Animation.cpp" />
+    <ClCompile Include="Engine\Game\Game.cpp" />
+    <ClCompile Include="Engine\Core\PhysicsSystem.cpp" />
+    <ClCompile Include="Engine\Core\RenderQueue.cpp" />
+    <ClCompile Include="Engine\Core\ImGuiLayer.cpp" />
+    <ClCompile Include="Engine\Game\GameObject.cpp" />
+    <ClCompile Include="Vendor\IamGui\Backends\imgui_impl_sdl2.cpp" />
+    <ClCompile Include="Vendor\IamGui\Backends\imgui_impl_sdlrenderer2.cpp" />
+    <ClCompile Include="Vendor\IamGui\imgui.cpp" />
+    <ClCompile Include="Vendor\IamGui\imgui_demo.cpp" />
+    <ClCompile Include="Vendor\IamGui\imgui_draw.cpp" />
+    <ClCompile Include="Vendor\IamGui\imgui_tables.cpp" />
+    <ClCompile Include="Vendor\IamGui\imgui_widgets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="Build\build-debug.bat" />
+    <None Include="Build\clean.bat" />
+    <None Include="Build\run-debug.bat" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Assets\AnimationManager.h" />
+    <ClInclude Include="Engine\Assets\SceneManager.h" />
+    <ClInclude Include="Engine\Assets\ScriptManager.h" />
+    <ClInclude Include="Engine\Core\ImGuiLayer.h" />
+    <ClInclude Include="Engine\Game\Script.h" />
+    <ClInclude Include="Engine\Assets\AssetManager.h" />
+    <ClInclude Include="Engine\Assets\FontManager.h" />
+    <ClInclude Include="Engine\Assets\SoundManager.h" />
+    <ClInclude Include="Engine\Core\Animation.h" />
+    <ClInclude Include="Engine\Game\Game.h" />
+    <ClInclude Include="Engine\Core\PhysicsSystem.h" />
+    <ClInclude Include="Engine\Core\RenderQueue.h" />
+    <ClInclude Include="Engine\Game\GameObject.h" />
+    <ClInclude Include="Scripts\PlayerMovementsCreated.h" />
+    <ClInclude Include="Vendor\IamGui\Backends\imgui_impl_sdl2.h" />
+    <ClInclude Include="Vendor\IamGui\Backends\imgui_impl_sdlrenderer2.h" />
+    <ClInclude Include="Vendor\IamGui\imconfig.h" />
+    <ClInclude Include="Vendor\IamGui\imgui.h" />
+    <ClInclude Include="Vendor\IamGui\imgui_internal.h" />
+    <ClInclude Include="Vendor\IamGui\imstb_rectpack.h" />
+    <ClInclude Include="Vendor\IamGui\imstb_textedit.h" />
+    <ClInclude Include="Vendor\IamGui\imstb_truetype.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\Fonts\OpenSans-Regular.ttf" />
+    <Font Include="Assets\Fonts\OpenSans_Condensed-BoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\Sounds\GameOver.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\brick.png" />
+    <Image Include="Assets\Textures\heart.png" />
+    <Image Include="Assets\Textures\missing.png" />
+    <Image Include="docs\images\animation.png" />
+    <Image Include="docs\images\build.png" />
+    <Image Include="docs\images\demo.gif" />
+    <Image Include="docs\images\editor.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\SDL2Package.1.0.0\build\native\SDL2Package.targets" Condition="Exists('..\packages\SDL2Package.1.0.0\build\native\SDL2Package.targets')" />
+    <Import Project="..\packages\Box2D.2.3.0\build\native\Box2D.targets" Condition="Exists('..\packages\Box2D.2.3.0\build\native\Box2D.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SDL2Package.1.0.0\build\native\SDL2Package.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SDL2Package.1.0.0\build\native\SDL2Package.targets'))" />
+    <Error Condition="!Exists('..\packages\Box2D.2.3.0\build\native\Box2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Box2D.2.3.0\build\native\Box2D.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,37 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+
+# Build outputs
+x64/
+Debug/
+Release/
+dist/
+bin/
+obj/
+
+# C++ build files
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+*.cache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ImGui local settings
+imgui.ini
