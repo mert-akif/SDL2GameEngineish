@@ -94,3 +94,61 @@ document.querySelectorAll('[data-copy-target]').forEach(button => {
 
 const year = document.getElementById('current-year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+// Documentation tabs: accessible selection + keyboard navigation.
+const docTabs = Array.from(document.querySelectorAll('[data-doc-tab]'));
+const docPanels = Array.from(document.querySelectorAll('[data-doc-panel]'));
+function activateDocTab(next, focus = false) {
+  const key = next.dataset.docTab;
+  docTabs.forEach(tab => {
+    const selected = tab === next;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+  docPanels.forEach(panel => { panel.hidden = panel.dataset.docPanel !== key; });
+  if (focus) next.focus();
+}
+docTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => activateDocTab(tab));
+  tab.addEventListener('keydown', event => {
+    if (!['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    let next = index;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % docTabs.length;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index + docTabs.length - 1) % docTabs.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = docTabs.length - 1;
+    activateDocTab(docTabs[next], true);
+  });
+});
+
+// Show reading progress and a scroll-to-top shortcut.
+const progressBar = document.querySelector('.reading-progress span');
+const toTopButton = document.querySelector('.back-to-top');
+const navLinks = Array.from(document.querySelectorAll('.desktop-nav a'));
+let scrollPending = false;
+function updateScrollUi() {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const fraction = scrollHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollHeight)) : 0;
+  if (progressBar) progressBar.style.width = `${fraction * 100}%`;
+  if (toTopButton) toTopButton.classList.toggle('show', window.scrollY > 520);
+  scrollPending = false;
+}
+window.addEventListener('scroll', () => {
+  if (scrollPending) return;
+  scrollPending = true;
+  window.requestAnimationFrame(updateScrollUi);
+}, { passive: true });
+window.addEventListener('resize', updateScrollUi);
+updateScrollUi();
+
+if ('IntersectionObserver' in window && navLinks.length) {
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+    });
+  }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
+  sections.forEach(section => observer.observe(section));
+}
